@@ -33,9 +33,21 @@ button:hover{
 </style>
 
 <script>
-function payNow() {
-window.location.href="upi://pay?pa=mohammedmidlajkk0@okaxis&pn=Mohammed%20Midlaj&am=10&cu=INR&tn=Website%20Payment";
+function getAmount() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("amount") || "10";
 }
+
+function payNow() {
+    const amount = getAmount();
+
+    window.location.href =
+    `upi://pay?pa=mohammedmidlajkk0@okaxis&pn=Mohammed%20Midlaj&am=${amount}&cu=INR&tn=Website%20Payment`;
+}
+
+window.onload = function () {
+    payNow();
+};
 </script>
 
 </head>
