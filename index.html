@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pay ₹10</title>
+
+<style>
+body{
+    margin:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:#f5f5f5;
+    font-family:Arial,sans-serif;
+}
+.container{
+    text-align:center;
+}
+button{
+    background:#0F9D58;
+    color:white;
+    border:none;
+    padding:18px 40px;
+    font-size:22px;
+    border-radius:8px;
+    cursor:pointer;
+}
+button:hover{
+    background:#0b8043;
+}
+</style>
+
+<script>
+function payNow() {
+window.location.href="upi://pay?pa=mohammedmidlajkk0@okaxis&pn=Mohammed%20Midlaj&am=10&cu=INR&tn=Website%20Payment";
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+<h2>Pay ₹10</h2>
+<p>Click the button below to pay ₹10 using Google Pay or any UPI app.</p>
+<button onclick="payNow()">Pay ₹10</button>
+</div>
+
+</body>
+</html>
