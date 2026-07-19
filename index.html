@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pay ₹10</title>
+<title>UPI Payment</title>
 
 <style>
 body{
@@ -20,7 +20,7 @@ body{
 }
 button{
     background:#0F9D58;
-    color:white;
+    color:#fff;
     border:none;
     padding:18px 40px;
     font-size:22px;
@@ -41,8 +41,14 @@ function getAmount() {
 function payNow() {
     const amount = getAmount();
 
-    window.location.href =
-    `upi://pay?pa=mohammedmidlajkk0@okaxis&pn=Mohammed%20Midlaj&am=${amount}&cu=INR&tn=Website%20Payment`;
+    const upiLink =
+        "upi://pay?pa=mohammedmidlajkk0@okaxis" +
+        "&pn=Mohammed%20Midlaj" +
+        "&am=" + amount +
+        "&cu=INR" +
+        "&tn=Website%20Payment";
+
+    window.location.href = upiLink;
 }
 
 window.onload = function () {
@@ -55,10 +61,15 @@ window.onload = function () {
 <body>
 
 <div class="container">
-<h2>Pay ₹10</h2>
-<p>Click the button below to pay ₹10 using Google Pay or any UPI app.</p>
-<button onclick="payNow()">Pay ₹10</button>
+<h2>Pay ₹<span id="amt"></span></h2>
+
+<button onclick="payNow()">Pay Now</button>
+
 </div>
+
+<script>
+document.getElementById("amt").innerText=getAmount();
+</script>
 
 </body>
 </html>
